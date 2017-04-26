@@ -10,7 +10,7 @@
         <TextBlock Height="32" Width="128" Margin="10,10,379,77" FontSize="24">00:00:00</TextBlock>
         <Button Margin="273,4,161,77">start</Button>
         <TextBox Name="tb_hour" Margin="27,48,450,33">00</TextBox>
-        <TextBox Name="tb_Min" Margin="139,48,338,33">02</TextBox>
-        <TextBox Name="tb_sec" Margin="83,48,393,33">30</TextBox>
+        <TextBox Name="tb_Min" Margin="98,47,379,34">02</TextBox>
+        <TextBox Name="tb_sec" Margin="167,48,309,33">30</TextBox>
     </Grid>
 </Window>
