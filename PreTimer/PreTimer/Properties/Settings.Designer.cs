@@ -25,37 +25,25 @@ namespace PreTimer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int hour {
-            get {
-                return ((int)(this["hour"]));
-            }
-            set {
-                this["hour"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public int min {
+        public int D_min {
             get {
-                return ((int)(this["min"]));
+                return ((int)(this["D_min"]));
             }
             set {
-                this["min"] = value;
+                this["D_min"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int sec {
+        public int D_sec {
             get {
-                return ((int)(this["sec"]));
+                return ((int)(this["D_sec"]));
             }
             set {
-                this["sec"] = value;
+                this["D_sec"] = value;
             }
         }
         

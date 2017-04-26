@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="150" Width="525">
     <Grid>
-        <TextBlock Height="32" Width="128" Margin="10,10,379,77" FontSize="24">00:00:00</TextBlock>
-        <Button Margin="273,4,161,77">start</Button>
-        <TextBox Name="tb_hour" Margin="27,48,450,33">00</TextBox>
-        <TextBox Name="tb_Min" Margin="98,47,379,34">02</TextBox>
-        <TextBox Name="tb_sec" Margin="167,48,309,33">30</TextBox>
+        <TextBlock Name="tb_time" Height="32" Width="128" Margin="27,10,362,77" FontSize="24">00:00:00</TextBlock>
+        <Button Name="btu_Run" Margin="272,4,162,77" Click="btu_Run_Click">Run</Button>
+        <Button Name="btu_Stop" Margin="382,4,46,77" Click="btu_Stop_Click">Stop</Button>
+        <TextBox Name="tb_Min" Margin="27,58,450,23">04</TextBox>
+        <TextBox Name="tb_Sec" Margin="89,58,387,23">30</TextBox>
+        <Button Name="btu_Setting_save" Margin="272,54,162,23" Click="btu_Setting_save_Click">save</Button>
     </Grid>
 </Window>
