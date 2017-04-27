@@ -50,12 +50,12 @@ namespace PreTimer.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string 设置 {
+        public string D_tips_mu {
             get {
-                return ((string)(this["设置"]));
+                return ((string)(this["D_tips_mu"]));
             }
             set {
-                this["设置"] = value;
+                this["D_tips_mu"] = value;
             }
         }
     }

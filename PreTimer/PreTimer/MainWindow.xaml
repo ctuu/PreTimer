@@ -5,13 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PreTimer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="150" Width="525">
-    <Grid>
-        <TextBlock Name="tb_time" Height="32" Width="128" Margin="27,10,362,77" FontSize="24">00:00:00</TextBlock>
-        <Button Name="btu_Run" Margin="272,4,162,77" Click="btu_Run_Click">Run</Button>
-        <Button Name="btu_Stop" Margin="382,4,46,77" Click="btu_Stop_Click">Stop</Button>
-        <TextBox Name="tb_Min" Margin="27,58,450,23">04</TextBox>
-        <TextBox Name="tb_Sec" Margin="89,58,387,23">30</TextBox>
-        <Button Name="btu_Setting_save" Margin="272,54,162,23" Click="btu_Setting_save_Click">save</Button>
+        Title="MainWindow" Height="200" Width="525">
+    <Grid Margin="0,0,0,-4">
+        <TextBlock Name="tb_time" Height="32" Width="128" Margin="29,14,360,127" FontSize="24">00:00</TextBlock>
+        <Button Name="btu_Run" Height="36" Width="48" Margin="292,10,177,127" Click="btu_Run_Click">Run</Button>
+        <Button Name="btu_Stop" Height="36" Width="48" Margin="402,10,67,127" Click="btu_Stop_Click">Stop</Button>
+        <TextBox Name="tb_Min" Height="24" Width="48" Margin="29,76,440,73">02</TextBox>
+        <TextBox Name="tb_Sec" Height="24" Width="48" Margin="91,76,378,73">30</TextBox>
+        <Button Name="btu_Setting_save" Height="36" Width="48" Margin="292,67,177,70" Click="btu_Setting_save_Click">save</Button>
+        <TextBox Name="tb_tips_mu" Height="24" Width="256" Margin="29,128,232,21">dd</TextBox>
+        <Button Name="btu_tips_mu_load" Height="36" Width="48" Margin="292,118,177,19" Click="btu_tips_mu_load_Click">Load</Button>
+        <Button Name="btu_tips_mu_test" Height="36" Width="48" Margin="357,118,112,19" Click="btu_tips_mu_test_Click">test</Button>
     </Grid>
+
 </Window>
