@@ -8,8 +8,17 @@
     <Setting Name="D_sec" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="D_over_mu" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
     <Setting Name="D_tips_mu" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="D_tips_min" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="D_tips_sec" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">30</Value>
     </Setting>
   </Settings>
 </SettingsFile>

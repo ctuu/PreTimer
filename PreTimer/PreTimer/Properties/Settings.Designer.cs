@@ -49,13 +49,49 @@ namespace PreTimer.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string D_over_mu {
+            get {
+                return ((string)(this["D_over_mu"]));
+            }
+            set {
+                this["D_over_mu"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public string D_tips_mu {
             get {
                 return ((string)(this["D_tips_mu"]));
             }
             set {
                 this["D_tips_mu"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int D_tips_min {
+            get {
+                return ((int)(this["D_tips_min"]));
+            }
+            set {
+                this["D_tips_min"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30")]
+        public int D_tips_sec {
+            get {
+                return ((int)(this["D_tips_sec"]));
+            }
+            set {
+                this["D_tips_sec"] = value;
             }
         }
     }

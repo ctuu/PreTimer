@@ -5,17 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PreTimer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="525">
-    <Grid Margin="0,0,0,-4">
-        <TextBlock Name="tb_time" Height="32" Width="128" Margin="29,14,360,127" FontSize="24">00:00</TextBlock>
-        <Button Name="btu_Run" Height="36" Width="48" Margin="292,10,177,127" Click="btu_Run_Click">Run</Button>
-        <Button Name="btu_Stop" Height="36" Width="48" Margin="402,10,67,127" Click="btu_Stop_Click">Stop</Button>
-        <TextBox Name="tb_Min" Height="24" Width="48" Margin="29,76,440,73">02</TextBox>
-        <TextBox Name="tb_Sec" Height="24" Width="48" Margin="91,76,378,73">30</TextBox>
-        <Button Name="btu_Setting_save" Height="36" Width="48" Margin="292,67,177,70" Click="btu_Setting_save_Click">save</Button>
-        <TextBox Name="tb_tips_mu" Height="24" Width="256" Margin="29,128,232,21">dd</TextBox>
-        <Button Name="btu_tips_mu_load" Height="36" Width="48" Margin="292,118,177,19" Click="btu_tips_mu_load_Click">Load</Button>
-        <Button Name="btu_tips_mu_test" Height="36" Width="48" Margin="357,118,112,19" Click="btu_tips_mu_test_Click">test</Button>
+        Title="MainWindow" Height="301" Width="525">
+    <Grid>
+        <TextBlock Name="tb_time" Height="32" Width="128" Margin="28,30,361,212" FontSize="24">00:00</TextBlock>
+        <Button Name="btu_Run" Height="36" Width="48" Margin="291,26,178,212" Click="Btu_Run_Click">Run</Button>
+        <Button Name="btu_Stop" Height="36" Width="48" Margin="401,26,68,212" Click="Btu_Stop_Click">Stop</Button>
+        <TextBox Name="tb_Min" Height="24" Width="48" Margin="51,192,418,58">02</TextBox>
+        <TextBox Name="tb_Sec" Height="24" Width="48" Margin="124,192,345,58">30</TextBox>
+        <Button Name="btu_Setting_save" Height="36" Width="48" Margin="216,208,253,30" Click="Btu_Setting_save_Click">save</Button>
+        <TextBox Name="tb_tips_mu" Height="24" Width="256" Margin="28,100,233,146"></TextBox>
+        <Button Name="btu_tips_mu_load" Height="36" Width="48" Margin="291,100,178,134" Click="Btu_tips_mu_load_Click">Load</Button>
+        <Button Name="btu_tips_mu_test" Height="36" Width="48" Margin="356,100,113,134" Click="Btu_tips_mu_test_Click">test</Button>
+        <TextBox Name="tb_over_mu" Height="24" Width="256" Margin="28,162,233,84"></TextBox>
+        <Button Name="btu_over_mu_load" Height="36" Width="48" Margin="291,153,178,81" Click="Btu_over_mu_load_Click">Load</Button>
+        <Button Name="btu_over_mu_test" Height="36" Width="48" Margin="356,153,113,81" Click="Btu_over_mu_test_Click">test</Button>
+        <TextBox Name="tb_tips_Min" Height="24" Width="48" Margin="51,230,418,20">00</TextBox>
+        <TextBox Name="tb_tips_Sec" Height="24" Width="48" Margin="124,230,345,20">30</TextBox>
+        <Button Name="btu_about" Height="36" Width="48" Margin="444,218,25,16" Click="Btu_about_Click">About</Button>
     </Grid>
 
 </Window>
