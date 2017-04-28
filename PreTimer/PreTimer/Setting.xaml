@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PreTimer"
         mc:Ignorable="d"
         Title="Setting" Height="300" Width="400">
-    <Grid>
+    <Grid  ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="36"></RowDefinition>
             <RowDefinition Height="36"></RowDefinition>
