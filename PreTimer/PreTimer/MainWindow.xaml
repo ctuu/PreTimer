@@ -9,10 +9,10 @@
         <Grid>
             <WrapPanel>
                 <TextBlock x:Name="tb_time" FontSize="24" Width="72" Padding="0 4 0 4" FontFamily="Arial" TextAlignment="Center" Text="00:00"/>
-                <Button x:Name="btu_Run" Width="32" Height="32" Click="Btu_Run_Click" Content="Run"/>
-                <Button x:Name="btu_Stop" Width="32" Height="32" Click="Btu_Stop_Click" Content="Stop"/>
-                <Button x:Name="btu_setting" Width="32" Height="32" Click="Btu_setting_Click" Content="setting"/>
-                <Button x:Name="btu_exit" Width="32" Height="32" Click="btu_exit_Click" Content="Exit"/>
+                <Button x:Name="btu_Run" FontSize="16" Width="32" Height="32" Click="Btu_Run_Click" Content="&#xE102;" FontFamily="Segoe UI Symbol"/>
+                <Button x:Name="btu_Stop" FontSize="16" Width="32" Height="32" Click="Btu_Stop_Click"  Content="&#xE004;" FontFamily="Segoe UI Symbol"/>
+                <Button x:Name="btu_setting" FontSize="16" Width="32" Height="32" Click="Btu_setting_Click"  Content="&#xE115;" FontFamily="Segoe UI Symbol"/>
+                <Button x:Name="btu_exit" FontSize="10" Width="32" Height="32" Click="btu_exit_Click" Content="Exit"/>
             </WrapPanel>
 
         </Grid>

@@ -36,7 +36,7 @@ namespace PreTimer
                 f_over_mu.Stop();
                 f_over_mu.Play();
                 tb_time.Text = "Time over";
-                btu_Run.Content = "Run";
+                btu_Run.Content = char.ConvertFromUtf32(0xE102);
                 isTO = true;
             }
             else
@@ -56,7 +56,7 @@ namespace PreTimer
             {
                 D_Timer.Stop();
                 isR = false;
-                btu_Run.Content = "Run";
+                btu_Run.Content = char.ConvertFromUtf32(0xE102);
             }
             else
             {
@@ -68,7 +68,7 @@ namespace PreTimer
                 }
                 D_Timer.Start();
                 isR = true;
-                btu_Run.Content = "Pause";
+                btu_Run.Content = char.ConvertFromUtf32(0xE103);
             }
         }
 
@@ -79,7 +79,7 @@ namespace PreTimer
             tb_time.Text = set_time.ToString("mm:ss");
             isTO = true;
             isR = false;
-            btu_Run.Content = "Run";
+            btu_Run.Content = char.ConvertFromUtf32(0xE102);
         }
 
         private void btu_exit_Click(object sender, RoutedEventArgs e)
