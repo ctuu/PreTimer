@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Media;
 using System.Windows.Threading;
 
 namespace PreTimer
@@ -11,8 +12,8 @@ namespace PreTimer
     {
         private DateTime set_time = new DateTime(1, 1, 1, 0, Properties.Settings.Default.D_min, Properties.Settings.Default.D_sec);
         private DispatcherTimer D_Timer = new DispatcherTimer();
-        private System.Windows.Media.MediaPlayer f_tips_mu = new System.Windows.Media.MediaPlayer();
-        private System.Windows.Media.MediaPlayer f_over_mu = new System.Windows.Media.MediaPlayer();
+        private MediaPlayer f_tips_mu = new MediaPlayer();
+        private MediaPlayer f_over_mu = new MediaPlayer();
         private bool isTO = true;
         private bool isR = false;
         
@@ -37,6 +38,7 @@ namespace PreTimer
                 f_over_mu.Play();
                 tb_time.Text = "Time over";
                 btu_Run.Content = char.ConvertFromUtf32(0xE102);
+                btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
                 isTO = true;
             }
             else
@@ -57,6 +59,7 @@ namespace PreTimer
                 D_Timer.Stop();
                 isR = false;
                 btu_Run.Content = char.ConvertFromUtf32(0xE102);
+                btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
             }
             else
             {
@@ -69,6 +72,7 @@ namespace PreTimer
                 D_Timer.Start();
                 isR = true;
                 btu_Run.Content = char.ConvertFromUtf32(0xE103);
+                btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF1081ca"));
             }
         }
 
@@ -80,6 +84,7 @@ namespace PreTimer
             isTO = true;
             isR = false;
             btu_Run.Content = char.ConvertFromUtf32(0xE102);
+            btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
         }
 
         private void btu_exit_Click(object sender, RoutedEventArgs e)
