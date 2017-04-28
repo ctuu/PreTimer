@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="160"  Width="400" WindowStyle="None" ResizeMode="NoResize" Topmost="True">
+        Name="win_Main" Title="MainWindow" Height="32"  Width="400" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Top="0" Left="32">
     <Grid UseLayoutRounding="True" ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="32"></RowDefinition>
@@ -15,42 +15,17 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-        <WrapPanel Grid.Column="0">
-            <TextBlock Name="tb_time" Height="32" FontSize="24">00:00</TextBlock>
-            <Button Name="btu_Run" Click="Btu_Run_Click">Run</Button>
-            <Button Name="btu_Stop" Click="Btu_Stop_Click">Stop</Button>
-        </WrapPanel>
-            <Button Grid.Column="1" Width="32" HorizontalAlignment="Right" Name="btu_exit" Content="Close"/>
+            <WrapPanel Grid.Column="0">
+                <TextBlock Name="tb_time" Height="32" FontSize="24">00:00</TextBlock>
+                <Button Name="btu_Run" Click="Btu_Run_Click">Run</Button>
+                <Button Name="btu_Stop" Click="Btu_Stop_Click">Stop</Button>
+            </WrapPanel>
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Right">
+                <Button Name="btu_setting" Click="Btu_setting_Click" Height="32">setting</Button>
+                <Button Name="btu_exit" Click="btu_exit_Click">Exit</Button>
+            </WrapPanel>
         </Grid>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="377*"/>
-                <ColumnDefinition Width="148*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="36"></RowDefinition>
-                <RowDefinition Height="36"></RowDefinition>
-                <RowDefinition Height="36"></RowDefinition>
-            </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.ColumnSpan="2">
-                <TextBox Name="tb_Min" Height="24" Width="32" >02</TextBox>
-                <TextBox Name="tb_Sec" Height="24" Width="32" >30</TextBox>
-                <TextBox Name="tb_tips_Min" Height="24" Width="32" >00</TextBox>
-                <TextBox Name="tb_tips_Sec" Height="24" Width="32" >30</TextBox>
-                <Button Name="btu_Setting_save" Height="24" Width="32"  Click="Btu_Setting_save_Click">save</Button>
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
-                <TextBox Name="tb_tips_mu" Height="32" Width="256" ></TextBox>
-                <Button Name="btu_tips_mu_load" Height="32" Width="32"  Click="Btu_tips_mu_load_Click">Load</Button>
-                <Button Name="btu_tips_mu_test" Height="32" Width="32"  Click="Btu_tips_mu_test_Click">test</Button>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
-                <TextBox Name="tb_over_mu" Height="32" Width="256" ></TextBox>
-                <Button Name="btu_over_mu_load" Height="32" Width="32"  Click="Btu_over_mu_load_Click">Load</Button>
-                <Button Name="btu_over_mu_test" Height="32" Width="32"  Click="Btu_over_mu_test_Click">test</Button>
-            </StackPanel>
-            <Button Name="btu_about" Height="36" Width="48"  Click="Btu_about_Click"  Grid.Row="2" Grid.Column="1">About</Button>
-        </Grid>
+        
     </Grid>
 
 </Window>

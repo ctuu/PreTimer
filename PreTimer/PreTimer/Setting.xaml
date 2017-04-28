@@ -1,0 +1,38 @@
+﻿<Window x:Class="PreTimer.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PreTimer"
+        mc:Ignorable="d"
+        Title="Setting" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="36"></RowDefinition>
+            <RowDefinition Height="36"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label>计时长度</Label>
+            <TextBox Name="tb_Min" Height="24" Width="32" >02</TextBox>
+            <TextBox Name="tb_Sec" Height="24" Width="32" >30</TextBox>
+            <Label>提示时间</Label>
+            <TextBox Name="tb_tips_Min" Height="24" Width="32" >00</TextBox>
+            <TextBox Name="tb_tips_Sec" Height="24" Width="32" >30</TextBox>
+            <Button Name="btu_Setting_save" Height="24" Width="32"  Click="Btu_Setting_save_Click">save</Button>
+            <StackPanel HorizontalAlignment="Right">
+                <Button Name="btu_about" Height="36" Width="48"  Click="Btu_about_Click">About</Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBox Name="tb_tips_mu" Height="32" Width="256" ></TextBox>
+            <Button Name="btu_tips_mu_load" Height="32" Width="32"  Click="Btu_tips_mu_load_Click">Load</Button>
+            <Button Name="btu_tips_mu_test" Height="32" Width="32"  Click="Btu_tips_mu_test_Click">test</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBox Name="tb_over_mu" Height="32" Width="256" ></TextBox>
+            <Button Name="btu_over_mu_load" Height="32" Width="32"  Click="Btu_over_mu_load_Click">Load</Button>
+            <Button Name="btu_over_mu_test" Height="32" Width="32"  Click="Btu_over_mu_test_Click">test</Button>
+        </StackPanel>
+    </Grid>
+</Window>

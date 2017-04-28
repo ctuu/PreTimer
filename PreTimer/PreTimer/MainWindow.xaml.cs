@@ -165,5 +165,16 @@ namespace PreTimer
             About a = new About();
             a.ShowDialog();
         }
+
+        private void btu_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Btu_setting_Click(object sender, RoutedEventArgs e)
+        {
+            Setting a = new Setting();
+            a.ShowDialog();
+        }
     }
 }
