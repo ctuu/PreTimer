@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Name="win_Main" Title="MainWindow" Height="32"  Width="200" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Top="0" Left="32" Background="#FF2D2D30" >
+        Name="win_Main" Title="MainWindow" Height="32"  Width="200" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Top="0" Left="32" Background="#FF2D2D30" ShowInTaskbar="False">
     <Window.Resources>
         <Style BasedOn="{StaticResource btu_style}" TargetType="{x:Type Button}" x:Key="btu_style_sp">
             <Setter Property="Template">

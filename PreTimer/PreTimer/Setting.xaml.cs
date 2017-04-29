@@ -15,6 +15,8 @@ namespace PreTimer
             InitializeComponent();
             tb_Min.Text = Convert.ToString(Properties.Settings.Default.D_min);
             tb_Sec.Text = Convert.ToString(Properties.Settings.Default.D_sec);
+            tb_tips_Min.Text = Convert.ToString(Properties.Settings.Default.D_tips_min);
+            tb_tips_Sec.Text = Convert.ToString(Properties.Settings.Default.D_tips_sec);
             tb_tips_mu.Text = Properties.Settings.Default.D_tips_mu;
             tb_over_mu.Text = Properties.Settings.Default.D_over_mu;
         }
@@ -26,6 +28,7 @@ namespace PreTimer
             Properties.Settings.Default.D_tips_min = Convert.ToInt32(tb_tips_Min.Text);
             Properties.Settings.Default.D_tips_sec = Convert.ToInt32(tb_tips_Sec.Text);
             Properties.Settings.Default.Save();
+            Close();
         }
         private void Btu_tips_mu_load_Click(object sender, RoutedEventArgs e)
         {
@@ -85,10 +88,87 @@ namespace PreTimer
             }
         }
 
-        private void Btu_about_Click(object sender, RoutedEventArgs e)
+        private void Tb_Min_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            About a = new About();
-            a.ShowDialog();
+            try
+            {
+                int val = Convert.ToInt32(tb_Min.Text);
+                if (val > 59)
+                    tb_Min.Text = "";
+                if (tb_Min.Text.Length > 2)
+                    tb_Min.Text = tb_Min.Text.Remove(tb_Min.Text.Length - 1, 1);
+            }
+            catch
+            {
+                tb_Min.Text = "";
+            }
+        }
+
+        private void Tb_Sec_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            try
+            {
+                int val = Convert.ToInt32(tb_Sec.Text);
+                if (val > 59)
+                    tb_Sec.Text = "";
+                if (tb_Sec.Text.Length > 2)
+                    tb_Sec.Text = tb_Sec.Text.Remove(tb_Sec.Text.Length - 1, 1);
+            }
+            catch
+            {
+                tb_Sec.Text = "";
+            }
+        }
+
+        private void Tb_tips_Min_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            try
+            {
+                int val = Convert.ToInt32(tb_tips_Min.Text);
+                if (val > 59)
+                    tb_tips_Min.Text = "";
+                if (tb_tips_Min.Text.Length > 2)
+                    tb_tips_Min.Text = tb_tips_Min.Text.Remove(tb_tips_Min.Text.Length - 1, 1);
+            }
+            catch
+            {
+                tb_tips_Min.Text = "";
+            }
+        }
+
+        private void Tb_tips_Sec_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            try
+            {
+                int val = Convert.ToInt32(tb_tips_Sec.Text);
+                if (val > 59)
+                    tb_tips_Sec.Text = "";
+                if (tb_tips_Sec.Text.Length > 2)
+                    tb_tips_Sec.Text = tb_tips_Sec.Text.Remove(tb_tips_Sec.Text.Length - 1, 1);
+            }
+            catch
+            {
+                tb_tips_Sec.Text = "";
+            }
+        }
+
+        private void Tab_Dock_1_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+
+        private void Btu_close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Btu_reset_Click(object sender, RoutedEventArgs e)
+        {
+            tb_Min.Text = Convert.ToString(Properties.Settings.Default.D_min);
+            tb_Sec.Text = Convert.ToString(Properties.Settings.Default.D_sec);
+            tb_tips_Min.Text = Convert.ToString(Properties.Settings.Default.D_tips_min);
+            tb_tips_Sec.Text = Convert.ToString(Properties.Settings.Default.D_tips_sec);
         }
     }
 
