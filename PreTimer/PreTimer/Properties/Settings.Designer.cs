@@ -94,5 +94,17 @@ namespace PreTimer.Properties {
                 this["D_tips_sec"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool D_Enhance {
+            get {
+                return ((bool)(this["D_Enhance"]));
+            }
+            set {
+                this["D_Enhance"] = value;
+            }
+        }
     }
 }

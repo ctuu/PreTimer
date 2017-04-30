@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PreTimer"
         mc:Ignorable="d"
-        Title="Setting" Height="200" Width="400" Topmost="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Setting" Height="200" Width="400" Topmost="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
     <Window.Resources>
         <Style x:Key="tabCon_style" TargetType="{x:Type TabControl}">
             <Setter Property="Padding" Value="0"/>
@@ -117,7 +117,7 @@
                         <Label Foreground="#FFFFFFFF">秒</Label>
                     </WrapPanel>
                     <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="4">
-                        <CheckBox Foreground="#FFFFFFFF" Style="{DynamicResource cb_style}">增强模式</CheckBox>
+                        <CheckBox Name="Cb_Enhance" Foreground="#FFFFFFFF" Style="{DynamicResource cb_style}" Checked="Cb_Enhance_Checked" Unchecked="Cb_Enhance_Unchecked">增强模式</CheckBox>
                     </StackPanel>
                 </Grid>
                 <WrapPanel  DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom">
@@ -135,14 +135,14 @@
                 <WrapPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center">
                     <Label Foreground="#FFFFFFFF">提示声音：</Label>
                     <TextBox Name="tb_tips_mu" Height="24" Width="224" Template="{DynamicResource tbox_style}" Foreground="White"></TextBox>
-                    <Button Name="btu_tips_mu_load" Click="Btu_tips_mu_load_Click" Height="24" Width="24" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">...</Button>
-                    <Button Name="btu_tips_mu_test" Click="Btu_tips_mu_test_Click" Height="24" Width="48" Margin="4" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">测试</Button>
+                    <Button Name="btu_tips_mu_load" Click="Btu_tips_mu_load_Click" Height="24" Width="24" Margin="4" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">...</Button>
+                    <Button Name="btu_tips_mu_test" Click="Btu_tips_mu_test_Click" Height="24" Width="48" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">测试</Button>
                 </WrapPanel>
                 <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Label Foreground="#FFFFFFFF">结束声音：</Label>
+                    <Label Foreground="#FFFFFFFF">终止声音：</Label>
                     <TextBox Name="tb_over_mu" Height="24" Width="224" Template="{DynamicResource tbox_style}" Foreground="White"></TextBox>
-                    <Button Name="btu_over_mu_load" Click="Btu_over_mu_load_Click" Height="24" Width="24" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">...</Button>
-                    <Button Name="btu_over_mu_test" Click="Btu_over_mu_test_Click" Height="24" Width="48" Margin="4" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">测试</Button>
+                    <Button Name="btu_over_mu_load" Click="Btu_over_mu_load_Click" Height="24" Width="24" Margin="4" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">...</Button>
+                    <Button Name="btu_over_mu_test" Click="Btu_over_mu_test_Click" Height="24" Width="48" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">测试</Button>
                 </WrapPanel>
             </Grid>
         </TabItem>

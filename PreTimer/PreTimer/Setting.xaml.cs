@@ -19,6 +19,8 @@ namespace PreTimer
             tb_tips_Sec.Text = Convert.ToString(Properties.Settings.Default.D_tips_sec);
             tb_tips_mu.Text = Properties.Settings.Default.D_tips_mu;
             tb_over_mu.Text = Properties.Settings.Default.D_over_mu;
+            if (Properties.Settings.Default.D_Enhance)
+                Cb_Enhance.IsChecked = true;
         }
 
         private void Btu_Setting_save_Click(object sender, RoutedEventArgs e)
@@ -36,7 +38,7 @@ namespace PreTimer
             {
                 InitialDirectory = AppDomain.CurrentDomain.BaseDirectory,
                 DefaultExt = "*.mp3;*.wav",
-                Filter = "*|.mp3;*.wav"
+                Filter = "常用文件|*.mp3;*.wav|所有文件 (*.*)|*.*"
             };
             if (tips_mu.ShowDialog() == true)
             {
@@ -50,10 +52,11 @@ namespace PreTimer
         {
             if (!System.IO.File.Exists(Properties.Settings.Default.D_tips_mu))
             {
-                MessageBox.Show("File not exist.");
+                MessageBox.Show("文件不存在。");
             }
             else
             {
+                f_tips_mu.Open(new Uri(Properties.Settings.Default.D_tips_mu));
                 f_tips_mu.Stop();
                 f_tips_mu.Play();
             }
@@ -65,7 +68,7 @@ namespace PreTimer
             {
                 InitialDirectory = AppDomain.CurrentDomain.BaseDirectory,
                 DefaultExt = "*.mp3;*.wav",
-                Filter = "*|.mp3;*.wav"
+                Filter = "常用文件|*.mp3;*.wav|所有文件 (*.*)|*.*"
             };
             if (over_mu.ShowDialog() == true)
             {
@@ -79,10 +82,11 @@ namespace PreTimer
         {
             if (!System.IO.File.Exists(Properties.Settings.Default.D_over_mu))
             {
-                MessageBox.Show("File not exist.");
+                MessageBox.Show("文件不存在。");
             }
             else
             {
+                f_over_mu.Open(new Uri(Properties.Settings.Default.D_over_mu));
                 f_over_mu.Stop();
                 f_over_mu.Play();
             }
@@ -169,6 +173,18 @@ namespace PreTimer
             tb_Sec.Text = Convert.ToString(Properties.Settings.Default.D_sec);
             tb_tips_Min.Text = Convert.ToString(Properties.Settings.Default.D_tips_min);
             tb_tips_Sec.Text = Convert.ToString(Properties.Settings.Default.D_tips_sec);
+        }
+
+        private void Cb_Enhance_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.D_Enhance = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private void Cb_Enhance_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.D_Enhance = false;
+            Properties.Settings.Default.Save();
         }
     }
 

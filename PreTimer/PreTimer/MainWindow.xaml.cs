@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+
 
 namespace PreTimer
 {
@@ -20,14 +23,39 @@ namespace PreTimer
         public MainWindow()
         {
             InitializeComponent();
+            //Application.Current.MainWindow.WindowStyle = WindowStyle.ToolWindow;
+            Window w = new Window()
+            {
+                Top = -100, // Location of new window is outside of visible part of screen
+                Left = -100,
+                Width = 1, // size of window is enough small to avoid its appearance at the beginning
+                Height = 1,
+                WindowStyle = WindowStyle.ToolWindow, // Set window style as ToolWindow to avoid its icon in AltTab 
+                ShowInTaskbar = false
+            }; // Create helper window
+            w.Show(); // We need to show window before set is as owner to our main window
+            this.Owner = w; // Okey, this will result to disappear icon for main window.
+            w.Hide(); // Hide helper window just in case
+
             D_Timer.Tick += new EventHandler(D_Timer_Tick);
             D_Timer.Interval = new TimeSpan(0, 0, 1);
             tb_time.Text = set_time.ToString("mm:ss");
-            f_tips_mu.Open(new Uri(Properties.Settings.Default.D_tips_mu));
-            f_over_mu.Open(new Uri(Properties.Settings.Default.D_over_mu));
+            if (System.IO.File.Exists(Properties.Settings.Default.D_tips_mu))
+                f_tips_mu.Open(new Uri(Properties.Settings.Default.D_tips_mu));
+            else
+            {
+                Properties.Settings.Default.D_tips_mu = Environment.CurrentDirectory + @"\提示音.wav";
+                Properties.Settings.Default.Save();
+            }
+            if (System.IO.File.Exists(Properties.Settings.Default.D_over_mu))
+                f_over_mu.Open(new Uri(Properties.Settings.Default.D_over_mu));
+            {
+                Properties.Settings.Default.D_over_mu = Environment.CurrentDirectory + @"\结束音.wav";
+                Properties.Settings.Default.Save();
+            }
         }
-
         
+
         private void D_Timer_Tick(object sender, EventArgs e)
         {
 
@@ -36,10 +64,44 @@ namespace PreTimer
                 D_Timer.Stop();
                 f_over_mu.Stop();
                 f_over_mu.Play();
-                tb_time.Text = "Time over";
+                if (Properties.Settings.Default.D_Enhance)
+                {
+                    Activate();
+                    Window tio = new Window()
+                    {
+                        Topmost = true,
+                        WindowState = WindowState.Normal,
+                        WindowStyle = WindowStyle.None,
+                        ResizeMode = ResizeMode.NoResize,
+                        Height = SystemParameters.PrimaryScreenHeight,
+                        Width = SystemParameters.PrimaryScreenWidth,
+                        
+                        //TabIndex = 0x0effffff,
+                        Top = 0,
+                        Left = 0
+                };
+                    DockPanel do_te = new DockPanel()
+                    {
+                        Height = SystemParameters.PrimaryScreenHeight,
+                        Width = SystemParameters.PrimaryScreenWidth,
+                        
+                    };
+                    TextBlock tb_te = new TextBlock()
+                    {
+                        FontSize = 48,
+                        VerticalAlignment = VerticalAlignment.Center,
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        Text = "时间已到，请候选人结束演讲。（按 ESC 退出）"
+                    };
+                    do_te.Children.Add(tb_te);
+                    tio.Content = do_te;
+                    tio.KeyDown += ModifyPrice_KeyDown;
+                    tio.ShowDialog();
+                }
                 btu_Run.Content = char.ConvertFromUtf32(0xE102);
                 btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
                 isTO = true;
+                isR = false;
             }
             else
             {
@@ -52,6 +114,15 @@ namespace PreTimer
                 tb_time.Text = set_time.ToString("mm:ss");
             }
         }
+
+        private void ModifyPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)//Esc键  
+            {
+                ((Window)sender).Close();
+            }
+        }
+
         private void Btu_Run_Click(object sender, RoutedEventArgs e)
         {
             if (isR)
@@ -87,9 +158,9 @@ namespace PreTimer
             btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
         }
 
-        private void btu_exit_Click(object sender, RoutedEventArgs e)
+        private void Btu_exit_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void Btu_setting_Click(object sender, RoutedEventArgs e)
@@ -103,8 +174,10 @@ namespace PreTimer
                 set_time = new DateTime(1, 1, 1, 0, Properties.Settings.Default.D_min, Properties.Settings.Default.D_sec);
                 tb_time.Text = set_time.ToString("mm:ss");
             }
-            f_tips_mu.Open(new Uri(Properties.Settings.Default.D_tips_mu));
-            f_over_mu.Open(new Uri(Properties.Settings.Default.D_over_mu));
+            if (System.IO.File.Exists(Properties.Settings.Default.D_tips_mu))
+                f_tips_mu.Open(new Uri(Properties.Settings.Default.D_tips_mu));
+            if (System.IO.File.Exists(Properties.Settings.Default.D_over_mu))
+                f_over_mu.Open(new Uri(Properties.Settings.Default.D_over_mu));
 
         }
     }
