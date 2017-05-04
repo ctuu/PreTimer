@@ -32,7 +32,7 @@
     <Grid UseLayoutRounding="True">
         <Grid>
             <WrapPanel>
-                <TextBlock x:Name="tb_time" FontSize="24" Width="72" Padding="0 4 0 4" FontFamily="Arial" TextAlignment="Center" Text="00:00" Foreground="#FFFFFFFF"/>
+                <TextBlock x:Name="tb_time" x:FieldModifier="public" FontSize="24" Width="72" Padding="0 4 0 4" FontFamily="Arial" TextAlignment="Center" Text="00:00" Foreground="#FFFFFFFF"/>
                 <Button x:Name="btu_Run" Style="{DynamicResource btu_style}" FontSize="14" Width="32" Height="32" Click="Btu_Run_Click" Content="&#xE102;" FontFamily="Segoe UI Symbol" Foreground="#FF00cc6a"/>
                 <Button x:Name="btu_Stop" Style="{DynamicResource btu_style}" FontSize="14" Width="32" Height="32" Click="Btu_Stop_Click"  Content="&#xE004;" FontFamily="Segoe UI Symbol" Foreground="#FFe74856"/>
                 <Button x:Name="btu_setting" Style="{DynamicResource btu_style_sp}" FontSize="14" Width="32" Height="32" Click="Btu_setting_Click"  Content="&#xE115;" FontFamily="Segoe UI Symbol" Foreground="#FFbdbdbd"/>

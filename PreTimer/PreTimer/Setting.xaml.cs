@@ -19,8 +19,12 @@ namespace PreTimer
             tb_tips_Sec.Text = Convert.ToString(Properties.Settings.Default.D_tips_sec);
             tb_tips_mu.Text = Properties.Settings.Default.D_tips_mu;
             tb_over_mu.Text = Properties.Settings.Default.D_over_mu;
+            tb_Entext.Text = Properties.Settings.Default.D_Entext;
             if (Properties.Settings.Default.D_Enhance)
+            {
                 Cb_Enhance.IsChecked = true;
+                tb_Entext.IsReadOnly = false;
+            }
         }
 
         private void Btu_Setting_save_Click(object sender, RoutedEventArgs e)
@@ -29,6 +33,7 @@ namespace PreTimer
             Properties.Settings.Default.D_sec = Convert.ToInt32(tb_Sec.Text);
             Properties.Settings.Default.D_tips_min = Convert.ToInt32(tb_tips_Min.Text);
             Properties.Settings.Default.D_tips_sec = Convert.ToInt32(tb_tips_Sec.Text);
+            Properties.Settings.Default.D_Entext  = tb_Entext.Text;
             Properties.Settings.Default.Save();
             Close();
         }
@@ -173,16 +178,19 @@ namespace PreTimer
             tb_Sec.Text = Convert.ToString(Properties.Settings.Default.D_sec);
             tb_tips_Min.Text = Convert.ToString(Properties.Settings.Default.D_tips_min);
             tb_tips_Sec.Text = Convert.ToString(Properties.Settings.Default.D_tips_sec);
+            tb_Entext.Text = Properties.Settings.Default.D_Entext;
         }
 
         private void Cb_Enhance_Checked(object sender, RoutedEventArgs e)
         {
+            tb_Entext.IsReadOnly = false;
             Properties.Settings.Default.D_Enhance = true;
             Properties.Settings.Default.Save();
         }
 
         private void Cb_Enhance_Unchecked(object sender, RoutedEventArgs e)
         {
+            tb_Entext.IsReadOnly = true;
             Properties.Settings.Default.D_Enhance = false;
             Properties.Settings.Default.Save();
         }

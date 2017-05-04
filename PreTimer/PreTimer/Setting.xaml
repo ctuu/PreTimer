@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PreTimer"
         mc:Ignorable="d"
-        Title="Setting" Height="200" Width="400" Topmost="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+        Title="Setting" Height="228" Width="499" Topmost="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
     <Window.Resources>
         <Style x:Key="tabCon_style" TargetType="{x:Type TabControl}">
             <Setter Property="Padding" Value="0"/>
@@ -100,7 +100,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="36"></RowDefinition>
                         <RowDefinition Height="36"></RowDefinition>
-                        <RowDefinition Height="36"></RowDefinition>
+                        <RowDefinition Height="64"></RowDefinition>
                     </Grid.RowDefinitions>
                     <WrapPanel Grid.Row="0" VerticalAlignment="Center">
                         <Label Foreground="#FFFFFFFF">计时长度：</Label>
@@ -116,9 +116,10 @@
                         <TextBox Name="tb_tips_Sec" Height="24" Width="32" TextChanged="Tb_tips_Sec_TextChanged" Template="{DynamicResource tbox_style}" Foreground="White">30</TextBox>
                         <Label Foreground="#FFFFFFFF">秒</Label>
                     </WrapPanel>
-                    <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="4">
-                        <CheckBox Name="Cb_Enhance" Foreground="#FFFFFFFF" Style="{DynamicResource cb_style}" Checked="Cb_Enhance_Checked" Unchecked="Cb_Enhance_Unchecked">增强模式</CheckBox>
-                    </StackPanel>
+                    <WrapPanel Grid.Row="2" VerticalAlignment="Center" Margin="4">
+                        <CheckBox Name="Cb_Enhance" Foreground="#FFFFFFFF" VerticalAlignment="Center" Style="{DynamicResource cb_style}" Checked="Cb_Enhance_Checked" Unchecked="Cb_Enhance_Unchecked">增强模式：</CheckBox>
+                        <TextBox Name="tb_Entext" Height="24" Width="256" Margin="8 0 0 0" Template="{DynamicResource tbox_style}" Foreground="White" IsReadOnly="True"/>
+                    </WrapPanel>
                 </Grid>
                 <WrapPanel  DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <Button Name="Btu_Setting_save" Height="32" Width="48" Margin="4" Click="Btu_Setting_save_Click" Style="{DynamicResource btu_style_sp}" Background="#FF37373a" Foreground="#FFbdbdbd">保存</Button>

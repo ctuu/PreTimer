@@ -106,5 +106,17 @@ namespace PreTimer.Properties {
                 this["D_Enhance"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string D_Entext {
+            get {
+                return ((string)(this["D_Entext"]));
+            }
+            set {
+                this["D_Entext"] = value;
+            }
+        }
     }
 }

@@ -19,10 +19,11 @@ namespace PreTimer
         private MediaPlayer f_over_mu = new MediaPlayer();
         private bool isTO = true;
         private bool isR = false;
-        
+        private bool crEx = false;
         public MainWindow()
         {
             InitializeComponent();
+            
             //Application.Current.MainWindow.WindowStyle = WindowStyle.ToolWindow;
             Window w = new Window()
             {
@@ -36,7 +37,6 @@ namespace PreTimer
             w.Show(); // We need to show window before set is as owner to our main window
             this.Owner = w; // Okey, this will result to disappear icon for main window.
             w.Hide(); // Hide helper window just in case
-
             D_Timer.Tick += new EventHandler(D_Timer_Tick);
             D_Timer.Interval = new TimeSpan(0, 0, 1);
             tb_time.Text = set_time.ToString("mm:ss");
@@ -54,7 +54,6 @@ namespace PreTimer
                 Properties.Settings.Default.Save();
             }
         }
-        
 
         private void D_Timer_Tick(object sender, EventArgs e)
         {
@@ -79,11 +78,11 @@ namespace PreTimer
                         //TabIndex = 0x0effffff,
                         Top = 0,
                         Left = 0
-                };
+                    };
                     DockPanel do_te = new DockPanel()
                     {
-                        Height = SystemParameters.PrimaryScreenHeight,
-                        Width = SystemParameters.PrimaryScreenWidth,
+                        //Height = SystemParameters.PrimaryScreenHeight,
+                        //Width = SystemParameters.PrimaryScreenWidth,
                         
                     };
                     TextBlock tb_te = new TextBlock()
@@ -91,11 +90,20 @@ namespace PreTimer
                         FontSize = 48,
                         VerticalAlignment = VerticalAlignment.Center,
                         HorizontalAlignment = HorizontalAlignment.Center,
-                        Text = "时间已到，请候选人结束演讲。（按 ESC 退出）"
+                        Text = Properties.Settings.Default.D_Entext
                     };
                     do_te.Children.Add(tb_te);
                     tio.Content = do_te;
                     tio.KeyDown += ModifyPrice_KeyDown;
+                    if (System.Windows.Forms.Screen.AllScreens.Length > 1)
+                    {
+                        System.Windows.Forms.Screen s2 = System.Windows.Forms.Screen.AllScreens[1];
+                        System.Drawing.Rectangle r2 = s2.WorkingArea;
+                        tio.Top = r2.Top;
+                        tio.Left = r2.Left;
+                        tio.Height = r2.Height;
+                        tio.Width = r2.Width;
+                    }
                     tio.ShowDialog();
                 }
                 btu_Run.Content = char.ConvertFromUtf32(0xE102);
@@ -139,6 +147,19 @@ namespace PreTimer
                     set_time = new DateTime(1, 1, 1, 0, Properties.Settings.Default.D_min, Properties.Settings.Default.D_sec);
                     tb_time.Text = set_time.ToString("mm:ss");
                     isTO = false;
+                }
+                if (!crEx)
+                {
+                    Exten at = new Exten(this);
+                    if (System.Windows.Forms.Screen.AllScreens.Length > 1)
+                    {
+                        System.Windows.Forms.Screen s2 = System.Windows.Forms.Screen.AllScreens[1];
+                        System.Drawing.Rectangle r2 = s2.WorkingArea;
+                        at.Top = r2.Top;
+                        at.Left = r2.Left;
+                    }
+                    at.Show();
+                    crEx = true;
                 }
                 D_Timer.Start();
                 isR = true;
