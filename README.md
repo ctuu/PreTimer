@@ -27,6 +27,7 @@ A timer for presentation
     btu_Run.Content = char.ConvertFromUtf32(0xf04b); 
     btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
     ```
+
 + 跨窗口绑定
 
     http://www.cnblogs.com/tcjiaan/p/4947073.html
@@ -53,6 +54,7 @@ A timer for presentation
         mw?.tb_time.SetBinding(TextBlock.TextProperty, b);
     }
     ```
+
 + 程序从 Alt + Tab 中隐藏
 
     [Hide icon in ALT+TAB](https://social.msdn.microsoft.com/Forums/vstudio/en-US/8e3a788e-1e14-4751-a756-2d68358f898b/hide-icon-in-alttab?forum=wpf)
@@ -68,6 +70,7 @@ A timer for presentation
     this.Owner = w; // Okey, this will result to disappear icon for main window.
     w.Hide(); // Hide helper window just in case
     ```
+
 + 代码创建新窗口并添加控件
     ``` cs
     Window tio = new Window()
@@ -81,6 +84,7 @@ A timer for presentation
     do_te.Children.Add(tb_te); // 将 tb_te 加入到 do_te
     tio.Content = do_te; // 将 do_te 加入到tio
     ```
+
 + 按键事件
 
     [WPF学习笔记-如何按ESC关闭窗口](http://www.cnblogs.com/theroad/p/6178633.html)
@@ -95,6 +99,7 @@ A timer for presentation
         }
     }
     ```
+
 + 双显示器分屏显示
 
     [How to show() a wpf window in secondary monitor](https://social.msdn.microsoft.com/Forums/en-US/32d60663-8264-4153-9fb0-7053468191f2/how-to-show-a-wpf-window-in-secondary-monitor?forum=wpf)
@@ -119,6 +124,7 @@ A timer for presentation
     meg.ShowDialog(); //在主显示器显示，阻塞代码
     tio.Close();
     ```
+
 + 计时器
     ``` cs
     DispatcherTimer D_Timer = new DispatcherTimer();
@@ -127,6 +133,7 @@ A timer for presentation
 
     private void D_Timer_Tick(object sender, EventArgs e) {...}
     ```
+
 + TabControl 与 TabItem 自定义
 
     [自定义 WPF TabControl 的样式/模板](http://www.cnblogs.com/wpf_gd/articles/1707750.html)
@@ -153,6 +160,7 @@ A timer for presentation
         </TabItem.Header>
     </TabItem>
     ```
+
 + Hyberlink 的使用
     ``` xaml
     <Hyperlink NavigateUri="mailto:username@domainname" Click="Hyperlink_Click">word</Hyperlink>// 邮箱
@@ -164,6 +172,7 @@ A timer for presentation
         System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(link.NavigateUri.AbsoluteUri));
     }
     ```
+
 + 只能输入限定位数的数字
     ``` cs
     //Setting.xaml.cs
@@ -194,6 +203,7 @@ A timer for presentation
         Filter = "常用文件|*.mp3;*.wav|所有文件 (*.*)|*.*"
     };
     ```
+    
 + 杂项
     ``` cs
     string word = Environment.CurrentDirectory (+ @"\...\file.*"); // 获取当前目录
