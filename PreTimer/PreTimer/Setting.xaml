@@ -164,7 +164,7 @@
             <DockPanel>
                 <StackPanel DockPanel.Dock="Top">
                     <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top" FontSize="24">PreTimer</Label>
-                    <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top">版本：1.00</Label>
+                    <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top">版本：1.0.0</Label>
                     <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top">作者：ctuu</Label>
                     <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top">邮箱：ct.liuu@gmail.com</Label>
                 </StackPanel>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PreTimer"
         mc:Ignorable="d"
-        Title="Exten" Height="32"  Width="84" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Top="0" Left="400" Background="#FF2D2D30" ShowInTaskbar="False">
+        Title="Exten" Height="32"  Width="84" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Top="0" Left="400" Background="#FF161616" ShowInTaskbar="False">
     <Grid>
         <TextBlock Name="tb_exten_time" FontSize="24" Width="72" Padding="0 4 0 4" FontFamily="Arial" TextAlignment="Center" Text="00:00" Foreground="#FFFFFFFF"/>
     </Grid>
