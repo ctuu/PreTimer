@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Name="win_Main" Title="MainWindow" Height="32"  Width="200" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Top="0" Left="32" Background="#FF2D2D30" ShowInTaskbar="False">
+        Name="win_Main" Title="MainWindow" Height="32"  Width="200" WindowStyle="None" ResizeMode="NoResize" Topmost="True" Top="0" Left="32" Background="#FF161616" ShowInTaskbar="False">
     <Window.Resources>
         <Style BasedOn="{StaticResource btu_style}" TargetType="{x:Type Button}" x:Key="btu_style_sp">
             <Setter Property="Template">
@@ -31,12 +31,12 @@
     </Window.Resources>
     <Grid UseLayoutRounding="True">
         <Grid>
-            <WrapPanel>
-                <TextBlock x:Name="tb_time" x:FieldModifier="public" FontSize="24" Width="72" Padding="0 4 0 4" FontFamily="Arial" TextAlignment="Center" Text="00:00" Foreground="#FFFFFFFF"/>
-                <Button x:Name="btu_Run" Style="{DynamicResource btu_style}" FontSize="14" Width="32" Height="32" Click="Btu_Run_Click" Content="&#xE102;" FontFamily="Segoe UI Symbol" Foreground="#FF00cc6a"/>
-                <Button x:Name="btu_Stop" Style="{DynamicResource btu_style}" FontSize="14" Width="32" Height="32" Click="Btu_Stop_Click"  Content="&#xE004;" FontFamily="Segoe UI Symbol" Foreground="#FFe74856"/>
-                <Button x:Name="btu_setting" Style="{DynamicResource btu_style_sp}" FontSize="14" Width="32" Height="32" Click="Btu_setting_Click"  Content="&#xE115;" FontFamily="Segoe UI Symbol" Foreground="#FFbdbdbd"/>
-                <Button x:Name="btu_exit" Style="{DynamicResource btu_style_sp}" FontSize="14" Width="32" Height="32" Click="Btu_exit_Click" Content="&#xE21C;" Foreground="#FFbdbdbd" FontFamily="Segoe UI Symbol"/>
+            <WrapPanel VerticalAlignment="Center">
+                <TextBlock x:Name="tb_time" x:FieldModifier="public" FontSize="24" Width="72" Padding="0 4 0 4" FontFamily="Arial" TextAlignment="Center" Text="00:00" Foreground="#FFFFFFFF" MouseLeftButtonDown="Tb_time_MouseLeftButtonDown" MouseMove="Tb_time_MouseMove" />
+                <Button x:Name="btu_Run" Style="{DynamicResource btu_style}" FontSize="14" Width="32" Height="32" Click="Btu_Run_Click" Content="&#xf04b;" FontFamily="pack://application:,,,/Resources/#FontAwesome" Foreground="#FF00cc6a"/>
+                <Button x:Name="btu_Stop" Style="{DynamicResource btu_style}" FontSize="14" Width="32" Height="32" Click="Btu_Stop_Click"  Content="&#xf04d;" FontFamily="pack://application:,,,/Resources/#FontAwesome" Foreground="#FFe74856"/>
+                <Button x:Name="btu_setting" Style="{DynamicResource btu_style_sp}" FontSize="16" Width="32" Height="32" Click="Btu_setting_Click"  Content="&#xf013;" FontFamily="pack://application:,,,/Resources/#FontAwesome" Foreground="#FFbdbdbd"/>
+                <Button x:Name="btu_exit" Style="{DynamicResource btu_style_sp}" FontSize="16" Width="32" Height="32" Click="Btu_exit_Click" Content="&#xf00d;" FontFamily="pack://application:,,,/Resources/#FontAwesome" Foreground="#FFbdbdbd" />
             </WrapPanel>
 
         </Grid>

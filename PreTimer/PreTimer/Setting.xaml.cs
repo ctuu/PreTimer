@@ -194,6 +194,12 @@ namespace PreTimer
             Properties.Settings.Default.D_Enhance = false;
             Properties.Settings.Default.Save();
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Documents.Hyperlink link = sender as System.Windows.Documents.Hyperlink;
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(link.NavigateUri.AbsoluteUri));
+        }
     }
 
 }

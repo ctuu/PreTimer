@@ -16,8 +16,8 @@
             </Setter.Value>
         </Setter>
         <Setter Property="Foreground" Value="#FFBDBDBD"/>
-        <Setter Property="Background" Value="#FF2d2d30"/>
-        <Setter Property="BorderBrush" Value="#FF2d2d30"/>
+        <Setter Property="Background" Value="#FF161616"/>
+        <Setter Property="BorderBrush" Value="#FF161616"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -43,7 +43,7 @@
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="true"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="innerBorder" Value="#FF3e3e40"/>
+                            <Setter Property="Background" TargetName="innerBorder" Value="#FF262626"/>
                             <Setter Property="Foreground" Value="White"></Setter>
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
@@ -53,7 +53,7 @@
     </Style>
 
     <ControlTemplate x:Key="tbox_style" TargetType="{x:Type TextBoxBase}">
-        <Border x:Name="border" BorderBrush="#FF525461" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF3e3e40" SnapsToDevicePixels="True" VerticalAlignment="Center">
+        <Border x:Name="border" BorderBrush="#FF525461" BorderThickness="{TemplateBinding BorderThickness}" Background="#FF262626" SnapsToDevicePixels="True" VerticalAlignment="Center">
             <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
         </Border>
         <ControlTemplate.Triggers>
@@ -90,7 +90,7 @@
                 </Style>
             </Setter.Value>
         </Setter>
-        <Setter Property="Background" Value="#FF3e3e40"/>
+        <Setter Property="Background" Value="#FF262626"/>
         <Setter Property="BorderBrush" Value="#FF525461"/>
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -128,7 +128,7 @@
                             <Setter Property="Padding" Value="4,-1,0,0"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="checkBoxBorder" Value="#FF3e3e40"/>
+                            <Setter Property="Background" TargetName="checkBoxBorder" Value="#FF262626"/>
                             <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="#FF5593FF"/>
                             <Setter Property="Fill" TargetName="optionMark" Value="#FFbbbbbb"/>
                             <Setter Property="Fill" TargetName="indeterminateMark" Value="#FF212121"/>
@@ -140,7 +140,7 @@
                             <Setter Property="Fill" TargetName="indeterminateMark" Value="#FF707070"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="checkBoxBorder" Value="#FF3e3e40"/>
+                            <Setter Property="Background" TargetName="checkBoxBorder" Value="#FF262626"/>
                             <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="#FF525461"/>
                             <Setter Property="Fill" TargetName="optionMark" Value="#FFbdbdbd"/>
                             <Setter Property="Fill" TargetName="indeterminateMark" Value="#FF212121"/>

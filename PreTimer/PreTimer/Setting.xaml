@@ -7,11 +7,26 @@
         mc:Ignorable="d"
         Title="Setting" Height="228" Width="499" Topmost="True" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
     <Window.Resources>
+        <Style x:Key="hyb_style" TargetType="{x:Type Hyperlink}">
+            <Setter Property="Foreground" Value="#FFbdbdbd"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#FFFFFFFF"/>
+                    <Setter Property="TextBlock.TextDecorations">
+                        <Setter.Value>
+                            <TextDecorationCollection>
+                                <TextDecoration Location="Underline"/>
+                            </TextDecorationCollection>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         <Style x:Key="tabCon_style" TargetType="{x:Type TabControl}">
             <Setter Property="Padding" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#FF2d2d30"/>
+            <Setter Property="Background" Value="#FF161616"/>
             <Setter Property="BorderBrush" Value="#FF525461"/>
             <Setter Property="BorderThickness" Value="0,2,0,0"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
@@ -79,13 +94,11 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="#FF3e3e40"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#FF2d2d30"/>
                                 <Setter TargetName="border" Property="TextElement.Foreground" Value="White"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" TargetName="border" Value="#FF1d1f20"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="#FF2d2d30"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF161616"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -148,11 +161,28 @@
             </Grid>
         </TabItem>
         <TabItem Header="关于"  FontSize="14" Height="32" Width="48" Style="{DynamicResource TabItem_style}">
-            <Label>=。=</Label>
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top">
+                    <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top" FontSize="24">PreTimer</Label>
+                    <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top">版本：1.00</Label>
+                    <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top">作者：ctuu</Label>
+                    <Label Foreground="#FFFFFFFF" DockPanel.Dock="Top">邮箱：ct.liuu@gmail.com</Label>
+                </StackPanel>
+                <WrapPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                    <WrapPanel VerticalAlignment="Center">
+                        <Label>
+                            <Hyperlink Style="{DynamicResource hyb_style}" NavigateUri="mailto:ct.liuu@gmail.com" Click="Hyperlink_Click" FontFamily="pack://application:,,,/Resources/#FontAwesome" FontSize="18" TextDecorations="{x:Null}" ></Hyperlink>
+                        </Label>
+                    </WrapPanel>
+                    <Label>
+                        <Hyperlink Style="{DynamicResource hyb_style}" NavigateUri="https://github.com/ctuu/PreTimer" Click="Hyperlink_Click" FontFamily="pack://application:,,,/Resources/#FontAwesome" FontSize="24" TextDecorations="{x:Null}" ></Hyperlink>
+                    </Label>
+                </WrapPanel>
+            </DockPanel>
         </TabItem>
         <TabItem Style="{DynamicResource TabItem_style}" DockPanel.Dock ="Right" HorizontalAlignment="Right" >
             <TabItem.Header >
-                <Button Name="Btu_close"  Style="{DynamicResource btu_style_sp}" FontSize="14" Width="32" Height="32" Click="Btu_close_Click" Content="&#xE21C;" Foreground="#FFbdbdbd" FontFamily="Segoe UI Symbol"/>
+                <Button Name="Btu_close"  Style="{DynamicResource btu_style_sp}" FontSize="14" Width="32" Height="32" Click="Btu_close_Click" Content="&#xf00d;" FontFamily="pack://application:,,,/Resources/#FontAwesome" Foreground="#FFbdbdbd" />
             </TabItem.Header>
         </TabItem>
     </TabControl>

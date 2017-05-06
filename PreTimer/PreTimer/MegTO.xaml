@@ -1,0 +1,17 @@
+﻿<Window x:Class="PreTimer.MegTO"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PreTimer"
+        mc:Ignorable="d"
+        Title="Time Over" Height="200" Width="240" Topmost="True" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DockPanel >
+            <Grid DockPanel.Dock="Top" Height="120">
+                <TextBlock Name="tb_meg" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Text="时间已到" TextWrapping="Wrap"/>
+            </Grid>
+            <Button Name="btu_close" DockPanel.Dock="Bottom" Click="Btu_close_Click" Height="32" Width="128">关闭</Button>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -20,10 +20,12 @@ namespace PreTimer
         private bool isTO = true;
         private bool isR = false;
         private bool crEx = false;
+        private Exten at;
+
         public MainWindow()
         {
             InitializeComponent();
-            
+
             //Application.Current.MainWindow.WindowStyle = WindowStyle.ToolWindow;
             Window w = new Window()
             {
@@ -44,13 +46,13 @@ namespace PreTimer
                 f_tips_mu.Open(new Uri(Properties.Settings.Default.D_tips_mu));
             else
             {
-                Properties.Settings.Default.D_tips_mu = Environment.CurrentDirectory + @"\提示音.wav";
+                Properties.Settings.Default.D_tips_mu = Environment.CurrentDirectory + @"\WAV\提示音.wav";
                 Properties.Settings.Default.Save();
             }
             if (System.IO.File.Exists(Properties.Settings.Default.D_over_mu))
                 f_over_mu.Open(new Uri(Properties.Settings.Default.D_over_mu));
             {
-                Properties.Settings.Default.D_over_mu = Environment.CurrentDirectory + @"\结束音.wav";
+                Properties.Settings.Default.D_over_mu = Environment.CurrentDirectory + @"\WAV\终止音.wav";
                 Properties.Settings.Default.Save();
             }
         }
@@ -58,7 +60,7 @@ namespace PreTimer
         private void D_Timer_Tick(object sender, EventArgs e)
         {
 
-            if (set_time == new DateTime(1,1,1,0,0,0))
+            if (set_time == new DateTime(1, 1, 1, 0, 0, 0))
             {
                 D_Timer.Stop();
                 f_over_mu.Stop();
@@ -74,7 +76,7 @@ namespace PreTimer
                         ResizeMode = ResizeMode.NoResize,
                         Height = SystemParameters.PrimaryScreenHeight,
                         Width = SystemParameters.PrimaryScreenWidth,
-                        
+
                         //TabIndex = 0x0effffff,
                         Top = 0,
                         Left = 0
@@ -83,13 +85,15 @@ namespace PreTimer
                     {
                         //Height = SystemParameters.PrimaryScreenHeight,
                         //Width = SystemParameters.PrimaryScreenWidth,
-                        
+
                     };
                     TextBlock tb_te = new TextBlock()
                     {
                         FontSize = 48,
                         VerticalAlignment = VerticalAlignment.Center,
                         HorizontalAlignment = HorizontalAlignment.Center,
+                        TextAlignment = TextAlignment.Center,
+                        TextWrapping = TextWrapping.Wrap,
                         Text = Properties.Settings.Default.D_Entext
                     };
                     do_te.Children.Add(tb_te);
@@ -104,9 +108,12 @@ namespace PreTimer
                         tio.Height = r2.Height;
                         tio.Width = r2.Width;
                     }
-                    tio.ShowDialog();
+                    tio.Show();
+                    MegTO meg = new MegTO();
+                    meg.ShowDialog();
+                    tio.Close();
                 }
-                btu_Run.Content = char.ConvertFromUtf32(0xE102);
+                btu_Run.Content = char.ConvertFromUtf32(0xf04b);
                 btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
                 isTO = true;
                 isR = false;
@@ -137,7 +144,7 @@ namespace PreTimer
             {
                 D_Timer.Stop();
                 isR = false;
-                btu_Run.Content = char.ConvertFromUtf32(0xE102);
+                btu_Run.Content = char.ConvertFromUtf32(0xf04b);
                 btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
             }
             else
@@ -150,20 +157,24 @@ namespace PreTimer
                 }
                 if (!crEx)
                 {
-                    Exten at = new Exten(this);
-                    if (System.Windows.Forms.Screen.AllScreens.Length > 1)
-                    {
-                        System.Windows.Forms.Screen s2 = System.Windows.Forms.Screen.AllScreens[1];
-                        System.Drawing.Rectangle r2 = s2.WorkingArea;
-                        at.Top = r2.Top;
-                        at.Left = r2.Left;
-                    }
-                    at.Show();
+                    at = new Exten(this);
                     crEx = true;
+                }
+                if (System.Windows.Forms.Screen.AllScreens.Length > 1)
+                {
+                    System.Windows.Forms.Screen s2 = System.Windows.Forms.Screen.AllScreens[1];
+                    System.Drawing.Rectangle r2 = s2.WorkingArea;
+                    at.Top = r2.Top;
+                    at.Left = r2.Left;
+                    at.Show();
+                }
+                else
+                {
+                    at.Hide();
                 }
                 D_Timer.Start();
                 isR = true;
-                btu_Run.Content = char.ConvertFromUtf32(0xE103);
+                btu_Run.Content = char.ConvertFromUtf32(0xf04c);
                 btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF1081ca"));
             }
         }
@@ -175,7 +186,7 @@ namespace PreTimer
             tb_time.Text = set_time.ToString("mm:ss");
             isTO = true;
             isR = false;
-            btu_Run.Content = char.ConvertFromUtf32(0xE102);
+            btu_Run.Content = char.ConvertFromUtf32(0xf04b);
             btu_Run.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF00cc6a"));
         }
 
@@ -200,6 +211,17 @@ namespace PreTimer
             if (System.IO.File.Exists(Properties.Settings.Default.D_over_mu))
                 f_over_mu.Open(new Uri(Properties.Settings.Default.D_over_mu));
 
+        }
+
+        private void Tb_time_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+
+        }
+
+        private void Tb_time_MouseMove(object sender, MouseEventArgs e)
+        {
+            Top = 0;
         }
     }
 }
