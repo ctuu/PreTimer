@@ -1,6 +1,8 @@
 # PreTimer
 A timer for presentation
 
+![](https://github.com/ctuu/PreTimer/blob/master/Screenshot/PreTimer.png)
+
 图标字体来自 [FontAwesome](https://github.com/FortAwesome/Font-Awesome/)
 
 配置文件: [System Disk]:\Users[username]\AppData\Local\PreTimer
