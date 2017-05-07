@@ -5,7 +5,7 @@ A timer for presentation
 
 图标字体来自 [FontAwesome](https://github.com/FortAwesome/Font-Awesome/)
 
-配置文件: [System Disk]:\Users[username]\AppData\Local\PreTimer
+配置文件: [System Disk]:\Users\[username]\AppData\Local\PreTimer
 
 ### 特性：
 * WPF 开发，原生高 DPI 支持
