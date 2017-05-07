@@ -1,6 +1,8 @@
 # PreTimer
 A timer for presentation
 
+组件需求：[Microsoft .NET Framework 4](https://www.microsoft.com/zh-cn/download/details.aspx?id=17718)
+
 ![](https://github.com/ctuu/PreTimer/blob/master/Screenshot/PreTimer.png)
 
 图标字体来自 [FontAwesome](https://github.com/FortAwesome/Font-Awesome/)
